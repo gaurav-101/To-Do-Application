@@ -8,7 +8,7 @@ const PASSWORD = process.env.DB_PASSWORD;
 
 const Connection = () => {
 
-    const MONGODB_URI = `mongodb+srv://admin:admin@mern-todo.xhiactq.mongodb.net/`;
+    const MONGODB_URI = `mongodb+srv://admin:admin@mern-todo.xhiactq.mongodb.net/`;;
 
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
@@ -21,7 +21,7 @@ const Connection = () => {
     })
 
     mongoose.connection.on('error', () => {
-        console.log('Error while connecting with the database ',error.message);
+        console.log('Error while connecting with the database ', error.message);
     })
 }
 

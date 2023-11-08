@@ -1,21 +1,25 @@
 import { useState } from "react";
-import DueDateInput from "./DueDateInput";
-import Priority from "./Priority";
+
+import { useDispatch } from "react-redux";
+
+import { addNewTodo } from "../redux/actions";
+
 
 const TodoForm = () => {
     const [text, setText] = useState("");
-    const [description, setDescription] = useState("");
 
-    const onFormSubmit = () => {
+    const dispatch = useDispatch();
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+
+        dispatch(addNewTodo(text));
+
+        setText('');
     }
 
-    const onTextChange = (e) => {
-        console.log(e.target.value);
+    const onInputChange = (e) => {
         setText(e.target.value);
-    }
-    const onDescChange = (e) => {
-        console.log(e.target.value);
-        setDescription(e.target.value);
     }
 
     return (
@@ -23,17 +27,9 @@ const TodoForm = () => {
             <input  
                 placeholder="Enter new todo..."
                 className="input"
-                onChange={onTextChange}
+                onChange={onInputChange}
                 value={text}
             />
-            <input  
-                placeholder="Enter description..."
-                className="input"
-                onChange={onDescChange}
-                value={description}
-            />
-            <DueDateInput/>
-            <Priority/>
         </form>
     )
 }
