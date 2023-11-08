@@ -2,7 +2,7 @@ import React from "react";
 
 const Priority=() =>{
   const [state, setState] = React.useState({
-    level: "master"
+    priority: "urgent"
   })
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -11,24 +11,37 @@ const Priority=() =>{
   return (
     <form>
       <div>
-        Level
+        
+        Priority:
+        <br/>
+
         <label>
-          Acolyte
+          Urgent
           <input
             type="radio"
-            name="level"
-            value="acolyte"
-            checked={state.level === "acolyte"}
+            name="priority"
+            value="urgent"
+            checked={state.priority === "urgent"}
             onChange={handleChange}
           />
         </label>
         <label>
-          Master
+          Important
           <input
             type="radio"
-            name="level"
-            value="master"
-            checked={state.level === "master"}
+            name="priority"
+            value="important"
+            checked={state.priority === "important"}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Not Important
+          <input
+            type="radio"
+            name="priority"
+            value="notimportant"
+            checked={state.priority === "notimportant"}
             onChange={handleChange}
           />
         </label>
