@@ -10,7 +10,7 @@ const DueDateInput = () => {
   }
   return (
     <div>
-      <label for="DueDate">Due Date</label>
+      <label for="DueDate" ><div className="label">Due Date</div></label>
       <input type="date" name="dueDate" id="dueDate" onChange={onInputChange} value={date}></input>
       
     </div>

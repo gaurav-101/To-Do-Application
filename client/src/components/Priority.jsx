@@ -12,7 +12,7 @@ const Priority=() =>{
     <form>
       <div>
         
-        Priority:
+        <div className="label">Priority:</div>
         <br/>
 
         <label>
