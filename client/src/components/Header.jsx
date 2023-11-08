@@ -1,12 +1,8 @@
-
-
-
-
 const Header = () => {
 
     return (
         <header>
-            <h1>TodoList</h1>
+            <h1>Todo Application</h1>
         </header>
     )
 }
