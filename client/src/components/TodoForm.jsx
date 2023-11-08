@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DueDateInput from "./DueDateInput";
 
 const TodoForm = () => {
     const [text, setText] = useState("");
@@ -19,6 +20,7 @@ const TodoForm = () => {
                 onChange={onInputChange}
                 value={text}
             />
+            <DueDateInput/>
         </form>
     )
 }
